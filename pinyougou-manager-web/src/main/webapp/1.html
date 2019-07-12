@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="plugins/angularjs/angular.min.js"></script>
+    <script>
+        var app = angular.module("pinyougou",[]);
+        app.controller("myController",function($scope){
+
+            $scope.entity = {};
+
+            $scope.getData = function(){
+                //在页面中使用ng-model="name"，在控制器的$scope中可以获取。
+                alert($scope.entity);
+            }
+        });
+    </script>
+</head>
+<body ng-app="pinyougou" ng-controller="myController">
+    <input type="text" ng-model="entity.name"/>
+    <input type="text" ng-model="entity.age"/>
+    <button ng-click="getData()">点击我</button>
+</body>
+</html>
